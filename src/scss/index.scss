@@ -5,18 +5,26 @@ $green-300: #3F5D45;
 $primary: $green-300;
 $secondary: #FFE180;
 
+* {
+  font-family: PingFang TC;
+}
+
 body {
   margin: 0;
 }
 header {
   background-color: white;
-  height: 60px;
+  height: 80px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 
   .logo {
     width: 100px;
+  }
+
+  i {
+    margin: 0 30px;
   }
 }
 .text-primary {
@@ -30,19 +38,49 @@ header {
   display: flex;
 
   li {
-    height: 120px;
+    height: 150px;
     width: calc(100% / 3);
-    background-color: $primary;
+    background-color: rgba($primary, .9);
     color: white;
     writing-mode: vertical-rl;
     text-orientation: upright;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: lighter;
+    letter-spacing: 5px;
+    position: relative;
+    // opacity: .5;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: calc(150px - 4px);
+      z-index: -1;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      filter: blur(2px);
+    }
+
+    &:nth-child(1):after {
+      background-image: url(https://bit.ly/2R5tqwD);
+    }
+
+    &:nth-child(2):after {
+      background-image: url(https://bit.ly/2Dwoxd7);
+    }
+
+    &:nth-child(3):after {
+      background-image: url(https://bit.ly/2OUteif);
+    }
 
     &.active {
       color: $primary;
-      background-color: $secondary;
+      background-color: rgba($secondary, .9);
+      font-weight: normal;
     }
   }
 
@@ -186,16 +224,18 @@ img.vertical-title {
     height: 60px;
     color: $primary;
     display: flex;
+    max-width: 100%;
 
     .mail-icon, .submit {
-      display: inline-block;
+      display: inline-flex;
       width: 60px;
-      display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
     }
 
     input {
+      width: 0;
       flex-grow: 1;
       background-color: $green-100;
       border: 0;
@@ -245,7 +285,6 @@ footer {
 #social-icons {
   img {
     height: 30px;
-    width: unset;
     display: inline;
   }
 

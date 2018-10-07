@@ -17,7 +17,7 @@ body
 
   .quote-group
     img.horizontal-title(src="../img/sm-橫式-為什麼選擇了做甜點.svg")
-    img.cover-image(src="../../photos/annie-spratt-133872-unsplash.jpg")
+    .cover-image(style="background-image: url(https://bit.ly/2xPn7Eq)")
     img.vertical-title
     .description
       p 青山依舊在，幾度夕陽紅。慣看秋月春風。一壺濁酒喜相逢，浪花淘盡英雄。是非成敗轉空，滾滾長江東逝水，白髮漁樵江渚上，古今多少事，都付笑談中。
@@ -25,7 +25,7 @@ body
 
   .quote-group
     img.horizontal-title(src="../img/sm-橫式-為什麼一定要吃甜點.svg")
-    img.cover-image(src="../../photos/annie-spratt-133872-unsplash.jpg")
+    .cover-image(style="background-image: url(https://bit.ly/2zzAQS4)")
     img.vertical-title
     .description
       p 青山依舊在，幾度夕陽紅。慣看秋月春風。一壺濁酒喜相逢，浪花淘盡英雄。是非成敗轉空，滾滾長江東逝水，白髮漁樵江渚上，古今多少事，都付笑談中。
@@ -36,20 +36,28 @@ body
 
   section#products
     .product-entry
-      .image-group(style="background-image: url(https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7c376ffa487bcd258df29dc881b10703&auto=format&fit=crop&w=500&q=60)")
+      .image-group(style="background-image: url(https://bit.ly/2zBjQuq)")
         .tag 本日精選
         i.far.fa-heart.wish-list
       .info-group
-        .name
-        .price
-      button 加入購物車
+        .name 焦糖馬卡龍
+        .price NT $450
+      button.add-to-cart 加入購物車
 
   section#subscribe
+    .title-group
+      img(src="../img/logo-light.svg")
+      span 訂閱你我的甜蜜郵件
+    .input-group
+      i.fas.fa-envelope.mail-icon
+      input(type="text")
+      button.submit
+        i.fas.fa-arrow-right
 
   footer
     div
       img.logo(src="../img/logotype-sm-dark.svg")
-      img.horizontal-title
+      img.vertical-title
       .info-group
         div 07-1234-5678
         div sweetaste@email.com

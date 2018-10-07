@@ -4,11 +4,17 @@ head
   link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
 body
   header
-    i.text-primary.fas.fa-bars
-    img.logo(src="../img/logotype-sm-dark.svg")
-    i.text-primary.fas.fa-shopping-cart
+    i.fas.fa-bars#menu-toggle
+    .logo-group
+      img.logo-square(src="../img/logo-dark.svg")
+      img.logo(src="../img/logotype-sm-dark.svg")
+    ul#nav-links
+      li 首頁
+      li 甜點
+      li 登入
+    i.fas.fa-shopping-cart#cart-link
 
-  img.cover-image(src="../../photos/annie-spratt-133872-unsplash.jpg")
+  .cover-image(style="background-image: url(https://bit.ly/2OhbMHr)")
 
   ul#tags-menu
     li.active 本日精選
@@ -46,7 +52,7 @@ body
 
   section#subscribe
     .title-group
-      img(src="../img/logo-light.svg")
+      img.logo-square(src="../img/logo-light.svg")
       span 訂閱你我的甜蜜郵件
     .input-group
       i.fas.fa-envelope.mail-icon

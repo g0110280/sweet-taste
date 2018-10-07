@@ -5,6 +5,44 @@ $green-300: #3F5D45;
 $primary: $green-300;
 $secondary: #FFE180;
 
+$desktop-padding-x: 40px;
+
+@mixin hide-in-mobile {
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}
+
+@mixin hide-in-desktop {
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+@mixin when-in-desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin bg-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@mixin list-unstyled {
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+@mixin flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
 * {
   font-family: PingFang TC;
 }
@@ -14,28 +52,82 @@ body {
 }
 header {
   background-color: white;
-  height: 80px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: $primary;
 
-  .logo {
-    width: 100px;
+  @include when-in-desktop {
+    height: 80px;
+    padding: 5px $desktop-padding-x;
+    display: flex;
+    justify-content: flex-start;
   }
 
-  i {
+  #menu-toggle {
     margin: 0 30px;
+
+    @include hide-in-desktop;
+  }
+
+  .logo-group {
+    display: flex;
+
+    @include flex-center;
+
+    .logo {
+      width: 100px;
+
+      @include when-in-desktop {
+        height: 25px;
+        width: unset;
+      }
+    }
+
+    .logo-square {
+      width: 40px;
+
+      @include hide-in-mobile;
+    }
+
+    @include when-in-desktop {
+      > * + * {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  ul#nav-links {
+    display: flex;
+    margin-left: auto;
+
+    @include list-unstyled;
+    @include hide-in-mobile;
+
+    li {
+      margin: 0 25px;
+    }
+  }
+
+  #cart-link {
+    margin: 0 30px;
+
+    @include when-in-desktop {
+      margin-left: 50px;
+      margin-right: 0;
+    }
   }
 }
-.text-primary {
-  color: $primary;
+
+.logo-square {
+  width: 50px;
 }
 
 #tags-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
+
+  @include list-unstyled;
 
   li {
     height: 150px;
@@ -50,7 +142,6 @@ header {
     font-weight: lighter;
     letter-spacing: 5px;
     position: relative;
-    // opacity: .5;
 
     &:after {
       content: "";
@@ -59,10 +150,9 @@ header {
       width: 100%;
       height: calc(150px - 4px);
       z-index: -1;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
       filter: blur(2px);
+
+      @include bg-image;
     }
 
     &:nth-child(1):after {
@@ -93,24 +183,30 @@ img.horizontal-title {
   display: block;
   width: 200px;
   margin: 30px auto;
+
+  @include hide-in-desktop;
 }
 
 .cover-image {
   width: 100%;
   height: 70vw;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+
+  @include bg-image;
+  @include when-in-desktop {
+    margin: 0 $desktop-padding-x;
+    width: calc(100% - #{$desktop-padding-x} * 2);
+    height: 40vw;
+  }
 }
 
 img.vertical-title {
-  display: none;
+  display: inline;
+
+  @include hide-in-mobile;
 }
 
 .idea-image {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  @include bg-image;
 }
 
 .quote-group .description {
@@ -133,9 +229,9 @@ img.vertical-title {
 
   .image-group {
     height: 360px;
-    background-size: cover;
-    background-position: center center;
     position: relative;
+
+    @include bg-image;
 
     .tag {
       position: absolute;
@@ -204,10 +300,6 @@ img.vertical-title {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    img {
-      width: 50px;
-    }
 
     span {
       color: $green-100;

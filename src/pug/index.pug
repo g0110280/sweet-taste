@@ -1,50 +1,54 @@
 head
   title Sweetaste* | Stream
+  meta(name="viewport" content="width=device-width, initial-scale=1")
   link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
-  style.
-    header {
-      background-color: white;
-    }
-
 body
   header
-    i.fas.fa-bars
-    img(src="../../img/logotype-sm-dark.svg")
-    i.fas.fa-shopping-cart
+    i.text-primary.fas.fa-bars
+    img.logo(src="../img/logotype-sm-dark.svg")
+    i.text-primary.fas.fa-shopping-cart
 
-  img.cover-image
+  img.cover-image(src="../../photos/annie-spratt-133872-unsplash.jpg")
 
   ul#tags-menu
-    li 本日精選
+    li.active 本日精選
     li 人氣推薦
     li 新品上市
 
   .quote-group
-    img.horizontal-title
-    img.idea-image
+    img.horizontal-title(src="../img/sm-橫式-為什麼選擇了做甜點.svg")
+    img.cover-image(src="../../photos/annie-spratt-133872-unsplash.jpg")
     img.vertical-title
     .description
       p 青山依舊在，幾度夕陽紅。慣看秋月春風。一壺濁酒喜相逢，浪花淘盡英雄。是非成敗轉空，滾滾長江東逝水，白髮漁樵江渚上，古今多少事，都付笑談中。
       p 是非成敗轉頭空，青山依舊在，幾度夕陽紅。白髮漁樵江渚上，古今多少事，都付笑談中。
 
   .quote-group
-    img.horizontal-title
-    img.idea-image
+    img.horizontal-title(src="../img/sm-橫式-為什麼一定要吃甜點.svg")
+    img.cover-image(src="../../photos/annie-spratt-133872-unsplash.jpg")
     img.vertical-title
     .description
       p 青山依舊在，幾度夕陽紅。慣看秋月春風。一壺濁酒喜相逢，浪花淘盡英雄。是非成敗轉空，滾滾長江東逝水，白髮漁樵江渚上，古今多少事，都付笑談中。
       p 是非成敗轉頭空，青山依舊在，幾度夕陽紅。白髮漁樵江渚上，古今多少事，都付笑談中。
 
-  img.horizontal-title
+  img.horizontal-title(src="../img/sm-橫式-想吃甜點是不需要理由的.svg")
   img.vertical-title
 
   section#products
+    .product-entry
+      .image-group(style="background-image: url(https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7c376ffa487bcd258df29dc881b10703&auto=format&fit=crop&w=500&q=60)")
+        .tag 本日精選
+        i.far.fa-heart.wish-list
+      .info-group
+        .name
+        .price
+      button 加入購物車
 
   section#subscribe
 
   footer
     div
-      img.logo(src="../../img/logotype-sm-dark.svg")
+      img.logo(src="../img/logotype-sm-dark.svg")
       img.horizontal-title
       .info-group
         div 07-1234-5678
@@ -52,7 +56,7 @@ body
         div 800 高雄市新興區幸福路 520 號
     div
       #social-icons
-        img(src="../../img/ic-line@.svg")
-        img(src="../../img/ic-facebook.svg")
+        img(src="../img/ic-line@.svg")
+        img(src="../img/ic-facebook.svg")
       #copyright © 2018 Sweetaste* All Rights Reserved
 

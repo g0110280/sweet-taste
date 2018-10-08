@@ -1,19 +1,6 @@
-head
-  title Sweetaste* | Stream
-  meta(name="viewport" content="width=device-width, initial-scale=1")
-  link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
-body
-  header
-    i.fas.fa-bars#menu-toggle
-    .logo-group
-      img.logo-square(src="../img/logo-dark.svg")
-      img.logo(src="../img/logotype-sm-dark.svg")
-    ul#nav-links
-      li 首頁
-      li 甜點
-      li 登入
-    i.fas.fa-shopping-cart#cart-link
+extends _layout
 
+block content
   #banner(style="background-image: url(https://bit.ly/2OhbMHr)")
 
   ul#tags-menu
@@ -66,30 +53,3 @@ body
         .name 焦糖馬卡龍
         .price NT $450
       button.add-to-cart 加入購物車
-
-  section#subscribe
-    .title-group
-      img.logo-square(src="../img/logo-light.svg")
-      span 訂閱你我的甜蜜郵件
-    .input-group
-      i.fas.fa-envelope.mail-icon
-      input(type="text")
-      button.submit
-        i.fas.fa-arrow-right
-
-  footer
-    .top-row
-      .left-grid
-        img.logo(src="../img/logotype-sm-dark.svg")
-        .info-group
-          div 07-1234-5678
-          div sweetaste@email.com
-          div 800 高雄市新興區幸福路 520 號
-      .right-grid
-        img.vertical-title(src="../img/sm-今天是個吃甜點的好日子.svg")
-    .bottom-row
-      #social-icons
-        img(src="../img/ic-line@.svg")
-        img(src="../img/ic-facebook.svg")
-      #copyright © 2018 Sweetaste* All Rights Reserved
-

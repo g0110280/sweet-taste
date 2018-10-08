@@ -276,7 +276,7 @@ img.vertical-title {
 }
 
 #products {
-  padding: 0 20px 30px;
+  padding: 0 20px;
 
   @include when-in-desktop {
     display: flex;
@@ -369,12 +369,14 @@ img.vertical-title {
   background-color: $primary;
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
 
   @include flex-center;
   @include when-in-desktop {
     flex-direction: row;
     justify-content: space-between;
     padding: 30px $footer-padding-x;
+    margin-top: 50px;
   }
 
   .title-group {

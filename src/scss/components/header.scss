@@ -1,0 +1,69 @@
+header {
+  background-color: white;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $primary;
+
+  @include when-in-desktop {
+    height: 80px;
+    padding: 5px $desktop-padding-x;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  #menu-toggle {
+    margin: 0 30px;
+
+    @include hide-in-desktop;
+  }
+
+  .logo-group {
+    display: flex;
+
+    @include flex-center;
+
+    .logo {
+      width: 100px;
+
+      @include when-in-desktop {
+        height: 25px;
+        width: unset;
+      }
+    }
+
+    .logo-square {
+      width: 40px;
+
+      @include hide-in-mobile;
+    }
+
+    @include when-in-desktop {
+      > * + * {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  ul#nav-links {
+    display: flex;
+    margin-left: auto;
+
+    @include list-unstyled;
+    @include hide-in-mobile;
+
+    li {
+      margin: 0 25px;
+    }
+  }
+
+  #cart-link {
+    margin: 0 30px;
+
+    @include when-in-desktop {
+      margin-left: 50px;
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,118 @@
+#products-wrapper {
+  @include when-in-desktop {
+    padding: 0 $desktop-padding-x;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 50px;
+
+    #products {
+      align-items: flex-start;
+      padding: 0;
+      flex-wrap: wrap;
+      flex-grow: 1;
+
+      .product-entry {
+        width: calc(50% - 20px / 2);
+        margin: 0;
+        margin-bottom: 20px;
+        flex-grow: 0;
+
+        &:nth-child(even) {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
+
+#products {
+  padding: 0 20px;
+
+  @include when-in-desktop {
+    display: flex;
+    padding: 0 $desktop-padding-x;
+  }
+
+  &.carousel {
+    .product-entry:not(:first-of-type) {
+      display: none;
+
+      @include when-in-desktop {
+        display: block;
+      }
+    }
+  }
+}
+
+.product-entry {
+  @include when-in-desktop {
+    flex-grow: 1;
+  }
+
+  & + & {
+    margin-top: 20px;
+
+    @include when-in-desktop {
+      margin-top: 0;
+      margin-left: 20px;
+    }
+  }
+
+  .image-group {
+    height: 320px;
+    position: relative;
+
+    @include bg-image;
+
+    .tag {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $primary;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      color: white;
+      padding: 15px 10px;
+      letter-spacing: 5px;
+    }
+
+    .wish-list {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 15px 20px;
+      font-size: 1.25rem;
+    }
+  }
+
+  .info-group {
+    display: flex;
+
+    > * {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 0;
+      font-size: 1.25rem;
+      color: $primary;
+      border-left: 1px solid $green-100;
+      border-right: 1px solid $green-100;
+
+      + * {
+        border-left: 0;
+      }
+    }
+  }
+
+  .add-to-cart {
+    width: 100%;
+    border: 0;
+    padding: 15px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $primary;
+    background-color: $green-100;
+  }
+}

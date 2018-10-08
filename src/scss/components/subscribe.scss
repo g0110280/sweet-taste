@@ -1,0 +1,80 @@
+#subscribe {
+  padding: 30px;
+  background-color: $primary;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+
+  @include flex-center;
+  @include when-in-desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px $footer-padding-x;
+    margin-top: 50px;
+  }
+
+  .title-group {
+    display: inline-flex;
+
+    @include flex-center;
+
+    span {
+      color: $green-100;
+      font-size: 1.5rem;
+    }
+
+    > * + * {
+      margin-left: 20px;
+    }
+  }
+
+  .input-group {
+    background-color: $green-100;
+    height: 60px;
+    color: $primary;
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+
+    @include when-in-desktop {
+      width: 400px;
+    }
+
+    .mail-icon, .submit {
+      display: inline-flex;
+      width: 60px;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    input {
+      width: 0;
+      flex-grow: 1;
+      background-color: $green-100;
+      border: 0;
+      font-size: 1.25rem;
+      color: $primary;
+      padding: 0 15px;
+      margin-left: -15px;
+    }
+
+    .submit {
+      background-color: $secondary;
+      color: $primary;
+      border: 0;
+    }
+
+    i {
+      font-size: 1.25rem;
+    }
+  }
+
+  > * + * {
+    margin-top: 30px;
+
+    @include when-in-desktop {
+      margin-top: 0;
+    }
+  }
+}

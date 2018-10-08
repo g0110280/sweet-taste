@@ -1,0 +1,25 @@
+#banner {
+  width: 100%;
+  height: 70vw;
+
+  @include bg-image;
+  @include when-in-desktop {
+    margin: 0 $desktop-padding-x;
+    width: calc(100% - #{$desktop-padding-x} * 2);
+    height: 40vw;
+  }
+
+  img.vertical-title {
+    width: 15%;
+    margin-top: 15px;
+    margin-right: 15px;
+    display: inline;
+    float: right;
+
+    @include when-in-desktop {
+      width: 90px;
+      margin-top: 40px;
+      margin-right: 40px;
+    }
+  }
+}

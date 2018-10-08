@@ -1,0 +1,74 @@
+.quote-group {
+  $height-in-desktop: 460px;
+  $overflow-distance: 20px;
+
+  @include when-in-desktop {
+    display: flex;
+    background-color: $green-100;
+    height: $height-in-desktop;
+    justify-content: space-between;
+    align-items: start;
+    padding: 0 $desktop-padding-x;
+
+    &:nth-of-type(odd) {
+      .cover-image {
+        order: 2;
+      }
+      .vertical-title {
+        order: 1;
+      }
+    }
+
+    &:nth-of-type(even) {
+      .vertical-title {
+        order: 1;
+      }
+    }
+  }
+
+  .vertical-title {
+    margin-top: -$overflow-distance;
+  }
+
+  .cover-image {
+    width: 100%;
+    height: 70vw;
+
+    @include bg-image;
+    @include when-in-desktop {
+      width: $height-in-desktop;
+      height: $height-in-desktop + $overflow-distance * 2;
+      margin: -$overflow-distance 0;
+    }
+  }
+
+  .description {
+    padding: 30px;
+    background-color: $green-100;
+    color: $green-200;
+
+    @include when-in-desktop {
+      padding: 60px 0;
+
+      @include vertical-writing;
+    }
+
+    p {
+      margin: 0;
+      line-height: 30px;
+
+      @include when-in-desktop {
+        line-height: 45px;
+      }
+    }
+
+    p + p {
+      margin-top: 40px;
+
+      @include when-in-desktop {
+        margin-top: 0;
+        margin-right: 40px;
+      }
+    }
+  }
+}

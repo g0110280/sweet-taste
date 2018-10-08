@@ -1,0 +1,27 @@
+ul#pagination {
+  display: flex;
+  justify-content: center;
+
+  @include list-unstyled;
+  margin-top: 30px;
+  @include when-in-desktop {
+    padding: 0 $desktop-padding-x;
+    margin-top: 30px;
+    justify-content: flex-end;
+  }
+
+  > li > a {
+    border: 1px solid $green-100;
+    width: 60px;
+    height: 60px;
+    font-size: 1.25rem;
+    display: inline-flex;
+
+    @include flex-center;
+
+    &.active {
+      background-color: $primary;
+      color: $green-100;
+    }
+  }
+}

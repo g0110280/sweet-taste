@@ -5,3 +5,26 @@
 
   @include flex-center;
 }
+
+.logo-square {
+  width: 50px;
+}
+
+img.horizontal-title {
+  display: block;
+  width: 200px;
+  margin: 30px auto;
+
+  @include hide-in-desktop;
+}
+
+img.vertical-title {
+  display: inline;
+  width: 90px;
+
+  @include hide-in-mobile;
+}
+
+.idea-image {
+  @include bg-image;
+}

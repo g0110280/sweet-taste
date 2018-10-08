@@ -119,12 +119,13 @@ header {
     font-weight: lighter;
     letter-spacing: 5px;
     position: relative;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 
     @include vertical-writing;
     @include flex-center;
     @include when-in-desktop {
       height: 220px;
+      font-size: 1.5rem;
     }
 
     $blur-distance: 4px;
@@ -275,8 +276,7 @@ img.vertical-title {
 }
 
 #products {
-  padding-bottom: 30px;
-  padding: 0 20px;
+  padding: 0 20px 30px;
 
   @include when-in-desktop {
     display: flex;
@@ -295,6 +295,14 @@ img.vertical-title {
     @include when-in-desktop {
       margin-top: 0;
       margin-left: 20px;
+    }
+  }
+
+  &:not(:first-of-type) {
+    display: none;
+
+    @include when-in-desktop {
+      display: block;
     }
   }
 
@@ -389,7 +397,8 @@ img.vertical-title {
     height: 60px;
     color: $primary;
     display: flex;
-    max-width: 100%;
+    width: 100%;
+    max-width: 400px;
 
     @include when-in-desktop {
       width: 400px;

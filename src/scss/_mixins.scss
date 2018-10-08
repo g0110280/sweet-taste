@@ -1,0 +1,44 @@
+@mixin hide-in-mobile {
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}
+
+@mixin hide-in-desktop {
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+@mixin when-in-desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin bg-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@mixin list-unstyled {
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+@mixin flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin vertical-writing {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+@mixin spacing-between-sections {
+  margin-top: 100px;
+}

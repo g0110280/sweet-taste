@@ -14,7 +14,7 @@ body
       li 登入
     i.fas.fa-shopping-cart#cart-link
 
-  .cover-image(style="background-image: url(https://bit.ly/2OhbMHr)")
+  #banner(style="background-image: url(https://bit.ly/2OhbMHr)")
 
   ul#tags-menu
     li.active 本日精選
@@ -24,7 +24,7 @@ body
   .quote-group
     img.horizontal-title(src="../img/sm-橫式-為什麼選擇了做甜點.svg")
     .cover-image(style="background-image: url(https://bit.ly/2xPn7Eq)")
-    img.vertical-title
+    img.vertical-title(src="../img/lg-為什麼選擇了做甜點.svg")
     .description
       p 青山依舊在，幾度夕陽紅。慣看秋月春風。一壺濁酒喜相逢，浪花淘盡英雄。是非成敗轉空，滾滾長江東逝水，白髮漁樵江渚上，古今多少事，都付笑談中。
       p 是非成敗轉頭空，青山依舊在，幾度夕陽紅。白髮漁樵江渚上，古今多少事，都付笑談中。
@@ -32,17 +32,34 @@ body
   .quote-group
     img.horizontal-title(src="../img/sm-橫式-為什麼一定要吃甜點.svg")
     .cover-image(style="background-image: url(https://bit.ly/2zzAQS4)")
-    img.vertical-title
+    img.vertical-title(src="../img/lg-為什麼一定要吃甜點.svg")
     .description
       p 青山依舊在，幾度夕陽紅。慣看秋月春風。一壺濁酒喜相逢，浪花淘盡英雄。是非成敗轉空，滾滾長江東逝水，白髮漁樵江渚上，古今多少事，都付笑談中。
       p 是非成敗轉頭空，青山依舊在，幾度夕陽紅。白髮漁樵江渚上，古今多少事，都付笑談中。
 
-  img.horizontal-title(src="../img/sm-橫式-想吃甜點是不需要理由的.svg")
-  img.vertical-title
+  .flex-center
+    img.horizontal-title(src="../img/sm-橫式-想吃甜點是不需要理由的.svg")
+    img.vertical-title(src="../img/lg-想吃甜點是不需要理由的.svg")
 
   section#products
     .product-entry
       .image-group(style="background-image: url(https://bit.ly/2zBjQuq)")
+        .tag 本日精選
+        i.far.fa-heart.wish-list
+      .info-group
+        .name 焦糖馬卡龍
+        .price NT $450
+      button.add-to-cart 加入購物車
+    .product-entry
+      .image-group(style="background-image: url(https://bit.ly/2zBDAxX)")
+        .tag 本日精選
+        i.far.fa-heart.wish-list
+      .info-group
+        .name 焦糖馬卡龍
+        .price NT $450
+      button.add-to-cart 加入購物車
+    .product-entry
+      .image-group(style="background-image: url(https://bit.ly/2QbVsVR)")
         .tag 本日精選
         i.far.fa-heart.wish-list
       .info-group
@@ -61,14 +78,16 @@ body
         i.fas.fa-arrow-right
 
   footer
-    div
-      img.logo(src="../img/logotype-sm-dark.svg")
-      img.vertical-title
-      .info-group
-        div 07-1234-5678
-        div sweetaste@email.com
-        div 800 高雄市新興區幸福路 520 號
-    div
+    .top-row
+      .left-grid
+        img.logo(src="../img/logotype-sm-dark.svg")
+        .info-group
+          div 07-1234-5678
+          div sweetaste@email.com
+          div 800 高雄市新興區幸福路 520 號
+      .right-grid
+        img.vertical-title(src="../img/sm-今天是個吃甜點的好日子.svg")
+    .bottom-row
       #social-icons
         img(src="../img/ic-line@.svg")
         img(src="../img/ic-facebook.svg")

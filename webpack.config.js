@@ -63,7 +63,7 @@ module.exports = {
       filename:'./products.html'
     })
   ],
-  watch: true,
+  watch: false,
   watchOptions: {
     aggregateTimeout: 500,
     poll: 1000,

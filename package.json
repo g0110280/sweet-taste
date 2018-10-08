@@ -18,7 +18,7 @@
     "webpack-cli": "^3.1.1"
   },
   "scripts": {
-    "watch": "./node_modules/.bin/webpack",
+    "build": "./node_modules/.bin/webpack",
     "dev": "./node_modules/.bin/webpack-dev-server"
   }
 }

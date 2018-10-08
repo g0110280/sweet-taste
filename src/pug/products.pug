@@ -1,0 +1,45 @@
+extends _layout
+
+block content
+  #banner(style="background-image: url(https://bit.ly/2Qodh3Z)")
+    img.vertical-title(src="../img/lg-想吃甜點是不需要理由的.svg")
+
+  ul#tags-menu.stacked
+    li.title 甜點類別
+    li.active 所有甜點（48）
+    li 本日精選（10）
+    li 人氣推薦（26）
+    li 新品上市（12）
+
+  section#products
+    .product-entry
+      .image-group(style="background-image: url(https://bit.ly/2zBjQuq)")
+        .tag 本日精選
+        i.far.fa-heart.wish-list
+      .info-group
+        .name 焦糖馬卡龍
+        .price NT $450
+      button.add-to-cart 加入購物車
+    .product-entry
+      .image-group(style="background-image: url(https://bit.ly/2zBDAxX)")
+        .tag 本日精選
+        i.far.fa-heart.wish-list
+      .info-group
+        .name 焦糖馬卡龍
+        .price NT $450
+      button.add-to-cart 加入購物車
+    .product-entry
+      .image-group(style="background-image: url(https://bit.ly/2QbVsVR)")
+        .tag 本日精選
+        i.far.fa-heart.wish-list
+      .info-group
+        .name 焦糖馬卡龍
+        .price NT $450
+      button.add-to-cart 加入購物車
+
+  ul#pagination
+    li: a: i.fas.fa-caret-left
+    li: a.active 1
+    li: a 2
+    li: a 3
+    li: a: i.fas.fa-caret-right

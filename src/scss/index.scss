@@ -15,6 +15,11 @@ $footer-padding-x: 120px;
   font-family: PingFang TC;
 }
 
+a {
+  text-decoration: none;
+  color: $primary;
+}
+
 body {
   margin: 0;
 
@@ -99,6 +104,28 @@ header {
   width: 50px;
 }
 
+#banner {
+  width: 100%;
+  height: 70vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @include bg-image;
+  @include when-in-desktop {
+    margin: 0 $desktop-padding-x;
+    width: calc(100% - #{$desktop-padding-x} * 2);
+    height: 40vw;
+  }
+
+  img.vertical-title {
+    width: 15%;
+    margin-right: 15px;
+    display: inline;
+  }
+}
+
 #tags-menu {
   display: flex;
 
@@ -110,7 +137,33 @@ header {
     z-index: 2;
   }
 
-  li {
+  &.stacked {
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    li {
+      font-size: 1.5rem;
+      padding: 15px 0;
+      width: 100%;
+      text-align: center;
+      color: $primary;
+
+      &.title {
+        background-color: $primary;
+        color: $green-100;
+      }
+
+      &.active {
+        background-color: $green-100;
+      }
+    }
+
+    li + li {
+      border-bottom: 1px solid $green-100;
+    }
+  }
+
+  &:not(.stacked) > li {
     height: 150px;
     width: 100%;
     background-color: rgba($primary, .9);
@@ -175,18 +228,6 @@ img.horizontal-title {
   margin: 30px auto;
 
   @include hide-in-desktop;
-}
-
-#banner {
-  width: 100%;
-  height: 70vw;
-
-  @include bg-image;
-  @include when-in-desktop {
-    margin: 0 $desktop-padding-x;
-    width: calc(100% - #{$desktop-padding-x} * 2);
-    height: 40vw;
-  }
 }
 
 img.vertical-title {
@@ -282,6 +323,16 @@ img.vertical-title {
     display: flex;
     padding: 0 $desktop-padding-x;
   }
+
+  &.carousel {
+    .product-entry:not(:first-of-type) {
+      display: none;
+
+      @include when-in-desktop {
+        display: block;
+      }
+    }
+  }
 }
 
 .product-entry {
@@ -295,14 +346,6 @@ img.vertical-title {
     @include when-in-desktop {
       margin-top: 0;
       margin-left: 20px;
-    }
-  }
-
-  &:not(:first-of-type) {
-    display: none;
-
-    @include when-in-desktop {
-      display: block;
     }
   }
 
@@ -427,6 +470,7 @@ img.vertical-title {
 
     .submit {
       background-color: $secondary;
+      color: $primary;
       border: 0;
     }
 
@@ -514,4 +558,27 @@ footer {
 #copyright {
   font-family: times;
   margin-top: 20px;
+}
+
+ul#pagination {
+  display: flex;
+  justify-content: center;
+
+  @include list-unstyled;
+  margin-top: 30px;
+
+  > li > a {
+    border: 1px solid $green-100;
+    width: 60px;
+    height: 60px;
+    font-size: 1.25rem;
+    display: inline-flex;
+
+    @include flex-center;
+
+    &.active {
+      background-color: $primary;
+      color: $green-100;
+    }
+  }
 }

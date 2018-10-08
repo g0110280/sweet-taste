@@ -9,9 +9,9 @@ body
       img.logo-square(src="../img/logo-dark.svg")
       img.logo(src="../img/logotype-sm-dark.svg")
     ul#nav-links
-      li 首頁
-      li 甜點
-      li 登入
+      li: a(href="/") 首頁
+      li: a(href="/products.html") 甜點
+      li: a(href="/login.html") 登入
     i.fas.fa-shopping-cart#cart-link
 
   block content

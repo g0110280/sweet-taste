@@ -14,6 +14,16 @@ body
       li: a(href="/login.html") 登入
     i.fas.fa-shopping-cart#cart-link
 
+  mixin product(image)
+    .product-entry
+      .image-group(style="background-image: url("+image+")")
+        .tag 本日精選
+        i.far.fa-heart.wish-list
+      .info-group
+        .name 焦糖馬卡龍
+        .price NT $450
+      button.add-to-cart 加入購物車
+
   block content
 
   section#subscribe

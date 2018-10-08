@@ -104,13 +104,37 @@ header {
   width: 50px;
 }
 
+#products-wrapper {
+  @include when-in-desktop {
+    padding: 0 $desktop-padding-x;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 50px;
+
+    #products {
+      align-items: flex-start;
+      padding: 0;
+      flex-wrap: wrap;
+      flex-grow: 1;
+
+      .product-entry {
+        width: calc(50% - 20px / 2);
+        margin: 0;
+        margin-bottom: 20px;
+        flex-grow: 0;
+
+        &:nth-child(even) {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
+
 #banner {
   width: 100%;
   height: 70vw;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
 
   @include bg-image;
   @include when-in-desktop {
@@ -121,8 +145,16 @@ header {
 
   img.vertical-title {
     width: 15%;
+    margin-top: 15px;
     margin-right: 15px;
     display: inline;
+    float: right;
+
+    @include when-in-desktop {
+      width: 90px;
+      margin-top: 40px;
+      margin-right: 40px;
+    }
   }
 }
 
@@ -139,7 +171,14 @@ header {
 
   &.stacked {
     flex-direction: column;
+    margin-top: 0;
     margin-bottom: 20px;
+
+    @include when-in-desktop {
+      max-width: 300px;
+      margin-left: 0;
+      margin-right: 20px;
+    }
 
     li {
       font-size: 1.5rem;
@@ -566,6 +605,11 @@ ul#pagination {
 
   @include list-unstyled;
   margin-top: 30px;
+  @include when-in-desktop {
+    padding: 0 $desktop-padding-x;
+    margin-top: 30px;
+    justify-content: flex-end;
+  }
 
   > li > a {
     border: 1px solid $green-100;
